@@ -15,6 +15,6 @@ $sql = "INSERT INTO todos(owneremail,createddate,duedate,message)
 runQuery($sql);
 
 
-header('Location: userToDoList.php');
+header('Location: index.php');
 
 ?>

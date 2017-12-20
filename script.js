@@ -1,12 +1,9 @@
 $( document ).ready(function() {
 	$( "#register_form" ).submit(function( event ) {
-  		alert( "Registration Completed" );  
+  		alert( "Registration Complete!" );  
 	});
 	$( "#todo_form" ).submit(function( event ) {
-  		alert( "Task Added" );  
+  		alert( "Added" );  
 	});
-	// $( "#login_form" ).submit(function( event ) {
- //  		alert( "Attempting to Login" );  
-	// });	
 });
 

@@ -1,11 +1,12 @@
 <?php
+
 require "db.php";
 
-//Set Variables
+//VARIABLES
 $id = $_GET['id'];
 $editTask = $_POST['editTask'];
 
-//Generate Form for input
+//INPUT FORM
 // echo "<form action='edit_form.php' method='POST' target='_self'>";
 // echo "<input type='text' name='editTask'>";
 // echo "<input type='submit' value='Edit Task'>";
@@ -13,7 +14,7 @@ $editTask = $_POST['editTask'];
 
 
 
-//Update Message Query
+//ADD TO MESSAGE
 $sql = "UPDATE todos
 		SET message='$editTask'
 		WHERE id='$id'";

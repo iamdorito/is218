@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 require "db.php";
 $email = $_POST["email"];
@@ -14,7 +15,6 @@ if(runQuery($sql)==true){
 		$pw = $x["password"];
 	}
 
-	
 	if($password == $pw){
 		$sql = "SELECT fname,lname FROM accounts WHERE email='$email'";
 		$results = runQuery($sql);

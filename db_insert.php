@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 require "db.php";
 
@@ -12,21 +13,21 @@ else{
 		VALUES(id,'" . $_POST["firstName"] . "','" . $_POST["lastName"] . "','" . $_POST["email"] . "',
 				'" . $_POST["phoneNumber"] . "','" . $_POST["birthday"] . "','" . $_POST["gender"] . "','" . $_POST["password"] . "')";
 	runQuery($sql);
-	echo $_POST["firstName"] . " " . $_POST["lastName"] . " has been registered";
+	echo $_POST["firstName"] . " " . $_POST["lastName"] . " is registered";
 	$_SESSION["email"] = $_POST["email"];
 }
 
 header("Location: form.php");
 
-
 ?>
 
 <!DOCTYPE html>
+
 <html>
-<head>
-	<title></title>
-</head>
-<body>
-<a href="https://web.njit.edu/~dc267/finalproject//form.php">Go Back to Home Page</a>
-</body>
-</html>
+	<head>
+		<title></title>
+	</head>
+		<body>
+			<a href="https://web.njit.edu/~dc267/finalproject//form.php">Go Back to Home Page</a>
+		</body>
+	</html>

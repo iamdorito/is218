@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 require "db.php";
 //Sets Variables
@@ -6,7 +7,8 @@ $email = $_SESSION['email'];
 $Name = $_SESSION['userFirstName'];
 $Name = $_SESSION['userLastName'];
 
-//Header
+
+//HEADER
 echo "<header>";
 echo "<h2>To-Do List For " . $fName . " " . $lName . "</h1>";
 //Return to form.php
@@ -16,7 +18,7 @@ echo "<a class='header'  href='./logout.php'><button class=\"btn btn-secondary\"
 echo "</header>";
 
 
-//Displays uncompleted to do list items
+//UNCOMPLETE ITEMS
 echo "<div class='container'>";
 echo "<hr>";
 echo "<h4>Uncompleted</h4>";
@@ -33,13 +35,11 @@ echo "<input id='editInput' type='text' name='editTask'>";
 echo "<input id='editSubmit' type='submit' value='Edit Task'>";
 echo "</form>";
 
-
-
 }
 echo "</ul>";
-//End of Displays Uncompleted
 
-//Displays completed to do list items
+
+//COMPLETE ITEMS
 echo "<h4>Completed</h4>";
 $sql = "SELECT * FROM todos WHERE owneremail='$email' AND isdone='1'";
 $results = runQuery($sql);
@@ -50,23 +50,19 @@ foreach($results as $row){
 }
 echo "</ul>";
 echo "</div>";
-//End of Display Completed Items
 
 ?>
 
-
-
-
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
   	<link href="./style.css" rel="stylesheet">
   	
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+    <!-- BOOTSTRAPP -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
   </head>
@@ -91,9 +87,8 @@ echo "</div>";
 
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script src='./script.js'> </script>
-
 
   </body>
 </html>

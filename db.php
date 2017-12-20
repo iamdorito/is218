@@ -1,4 +1,5 @@
 <?php
+
 $hostname = "sql.njit.edu";
 $username = "dc267";
 $password = "DaCK9cF9";
@@ -10,10 +11,12 @@ try
 }
 catch(PDOException $e)
 {
-	// echo "Connection failed: " . $e->getMessage();
-	http_error("500 Internal Server Error\n\n"."There was a SQL error:\n\n" . $e->getMessage());
+	// FAILED CONNECTION
+	http_error("500 Internal Server Error\n\n"."SQL error:\n\n" . $e->getMessage());
 }
-// Runs SQL query and returns results (if valid)
+
+
+// RUN SQL
 function runQuery($query) {
 	global $conn;
     try {
@@ -23,7 +26,7 @@ function runQuery($query) {
 		$q->closeCursor();
 		return $results;	
 	} catch (PDOException $e) {
-		http_error("500 Internal Server Error\n\n"."There was a SQL error:\n\n" . $e->getMessage());
+		http_error("500 Internal Server Error\n\n"."SQL error:\n\n" . $e->getMessage());
 	}	  
 }
 function http_error($message) 
