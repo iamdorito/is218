@@ -18,7 +18,7 @@ $sql = "UPDATE todos
 		SET message='$editTask'
 		WHERE id='$id'";
 runQuery($sql);
-header('Location: userToDoList.php');
+header('Location: index.php');
 		
 		
 
