@@ -25,7 +25,7 @@ if(runQuery($sql)==true){
 			$_SESSION["userFirstName"] = $row["fname"];
 			$_SESSION["userLastName"] = $row["lname"];
 
-			header("Location: userToDoList.php");
+			header("Location: index.php");
 			
 			
 		}			
